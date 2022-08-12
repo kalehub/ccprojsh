@@ -3,7 +3,7 @@
 ############################################################
 # Help                                                     #
 ############################################################
-Help()
+help()
 {
    # Display Help
    echo "Create CPP Project using your CLI."
@@ -20,7 +20,7 @@ Help()
 ############################################################
 # Create New Project                                       #
 ############################################################
-NewProject()
+new_project()
 {
     # Creating New Project
     echo "Creating new project..."
@@ -30,19 +30,26 @@ NewProject()
 ############################################################
 # Main Program                                             #
 ############################################################
-# Get options
-while getopts ":h:n" option; do
+
+# Set Variabels
+project_name="Untitled"
+
+############################################################
+# Get Options                                              #
+############################################################
+while getopts ":hn:" option; do
     case $option in
         h) # display help
-            Help
+            help
             exit;;
         \?) # invalid option
             echo "Error: Invalid Option"
             exit;;
         n) # new project
-            NewProject
+            project_name=$OPTARG
+            new_project
             exit;;
     esac
 done
 
-echo "Hello world!"
+echo "Hello $project_name!"
