@@ -24,9 +24,34 @@ new_project()
 {
     # Creating New Project
     project_dir=$PWD
-    echo "$PWD"
+    setup_dir
+
 }
 
+############################################################
+# Create New Project                                       #
+############################################################
+setup_dir()
+{
+    # Create project directory
+    echo "Creating project directory..."
+    mkdir "$project_dir/$project_name"
+
+    cd "$project_dir/$project_name"
+    echo "$PWD"
+
+    folder_names=("bin" "include" "lib" "doc" "build" "src")
+    for str in ${folder_names[@]};do
+        echo "Creating ${str}..."
+        mkdir "${str}"
+    done
+    echo "Directory setup finished"
+
+
+
+
+
+}
 
 ############################################################
 # Main Program                                             #
