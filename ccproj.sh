@@ -17,4 +17,32 @@ Help()
    echo
 }
 
+############################################################
+# Create New Project                                       #
+############################################################
+NewProject()
+{
+    # Creating New Project
+    echo "Creating new project..."
+}
 
+
+############################################################
+# Main Program                                             #
+############################################################
+# Get options
+while getopts ":h:n" option; do
+    case $option in
+        h) # display help
+            Help
+            exit;;
+        \?) # invalid option
+            echo "Error: Invalid Option"
+            exit;;
+        n) # new project
+            NewProject
+            exit;;
+    esac
+done
+
+echo "Hello world!"
