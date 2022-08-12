@@ -23,7 +23,8 @@ help()
 new_project()
 {
     # Creating New Project
-    echo "Creating new project..."
+    project_dir=$PWD
+    echo "$PWD"
 }
 
 
