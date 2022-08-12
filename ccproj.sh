@@ -25,11 +25,10 @@ new_project()
     # Creating New Project
     project_dir=$PWD
     setup_dir
-
 }
 
 ############################################################
-# Create New Project                                       #
+# Directory Set Up                                         #
 ############################################################
 setup_dir()
 {
@@ -46,11 +45,6 @@ setup_dir()
         mkdir "${str}"
     done
     echo "Directory setup finished"
-
-
-
-
-
 }
 
 ############################################################
