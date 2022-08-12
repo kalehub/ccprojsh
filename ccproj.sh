@@ -25,8 +25,26 @@ new_project()
     # Creating New Project
     project_dir=$PWD
     setup_dir
+    write_cpp
+    write_cmake
 }
 
+############################################################
+# Write CPP File Source                                    #
+############################################################
+write_cpp(){
+    echo "Writing main.cpp file"
+    cpp_file="$project_dir/$project_name/src/main.cpp"
+    touch $FILE
+    printf "#include <iostream>\nusing namespace std;\n" >> $cpp_file
+}
+
+############################################################
+# Write CMakeLists.txt                                     #
+############################################################
+write_cmake(){
+    echo "To be continued..."
+}
 ############################################################
 # Directory Set Up                                         #
 ############################################################
